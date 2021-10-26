@@ -14,7 +14,7 @@ import rutasVentas from "./views/ventas/rutas.js";
 import rutasUsuario from "./views/usuarios/rutas.js";
 dotenv.config({path: './.env'}); //se llama el archivo por medio de un config y se coloca la dirección donde se encuentra
 
-
+const port= process.env.PORT || 5000;
 //a app (aplicación) se le agrega todo lo que necesitamos, como rutas y métodos
 // lo primero es decirle a la app que se prenda o escuche lo que llega de un 
 //puerto especifico, esto se hace con .listen
@@ -50,8 +50,8 @@ app.use(rutasUsuario)
 
 const main = ()=>{
     //esta parte de client es documentación de mongo y se peude copiar y pegar (complicada de memorizar)
-    return app.listen(process.env.PORT,()=>{
-            console.log(`escuchando por el puerto ${process.env.PORT}` );
+    return app.listen(port,()=>{
+            console.log(`escuchando por el puerto ${port}` );
         });
 
 };
